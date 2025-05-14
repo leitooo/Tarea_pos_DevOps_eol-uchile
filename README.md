@@ -12,7 +12,7 @@ source .venv/bin/activate
 # Windows PowerShell
 .venv\Scripts\activate
 
-###Luego
+### Luego
 ```
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt

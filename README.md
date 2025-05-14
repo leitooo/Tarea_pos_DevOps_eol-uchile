@@ -1,13 +1,16 @@
-# Tarea Postulación Desarrollador DevOps. Jr.
+# Tarea Postulación Desarrollador DevOps.
 
 ## Instrucciones iniciales para correr el proyecto
 
 ### Instalaciones necesarias
-```
-virtualenv --python python3 ./venv
-source venv/bin/activate
-pip install Django pytest-django
-```
+
+Crear y activar un entorno virtual
+
+python -m venv .venv
+# Linux/macOS
+source .venv/bin/activate
+# Windows PowerShell
+.venv\Scripts\activate
 
 ### Correr app
 ```

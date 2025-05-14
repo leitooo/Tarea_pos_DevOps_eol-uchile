@@ -1,0 +1,27 @@
+# .github/workflows/fast-forward.yml
+name: Fast-Forward PR
+
+# Se dispara cuando se crea un comentario en un issue o PR
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  fast-forward:
+    name: Fast-forward PR on "/ff"
+    # Solo correr si es un PR y el comentario es exactamente "/ff"
+    if: ${{ github.event.issue.pull_request && github.event.comment.body == '/ff' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      # Este action detecta el PR y hace git merge --ff-only
+      - name: Fast-forward pull request
+        uses: endre-spotlab/fast-forward-pr@v2.1
+        with:
+          # Mensaje en caso de éxito
+          success_message: 'Código propagado correctamente'
+          # Mensaje en caso de que el fast-forward falle
+          failure_message: 'No se pudo propagar el código'
+        env:
+          # Token provisto por GitHub para autenticar el push
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -13,10 +13,12 @@ source .venv/bin/activate
 .venv\Scripts\activate
 
 ###Luego
+```
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 
 ### Correr app
+```
 ```
 python manage.py runserver
 ```

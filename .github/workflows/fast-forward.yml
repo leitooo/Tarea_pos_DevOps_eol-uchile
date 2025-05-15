@@ -1,21 +1,22 @@
+name: Fast-Forward PR
 on:
   issue_comment:
     types: [created]
     
 permissions:
-  contents: write 
+  contents: write          # necesario para hacer push
+  issues: write            # para comentar en el PR
+  pull-requests: write     # para “fast-forward” del PR
 
 jobs:
   fast-forward:
     runs-on: ubuntu-latest
-    
     if: ${{ github.event.issue.pull_request && contains(github.event.comment.body, '/ff') }}
-    
+
     steps:
       - name: Fast-forward pull request
-        uses: endre-spotlab/fast-forward-pr@v2.1
+        uses: endre-spotlab/fast-forward-js-action@2.1
         with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           success_message: 'Código propagado correctamente'
           failure_message: 'No se pudo propagar el código'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

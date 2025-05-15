@@ -1,0 +1,1 @@
+Línea añadida en main para forzar conflicto

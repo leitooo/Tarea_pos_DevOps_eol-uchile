@@ -20,7 +20,7 @@ python -m pip install -r requirements.txt
 ```
 ### Correr app
 ```
-python manage.py
+python manage.py runserver
 ```
 por defecto arranca en el puerto 8000
 

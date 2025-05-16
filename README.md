@@ -24,7 +24,7 @@ Django>=4.2
 ```
 ### Correr app
 ```
-python manage.py runserver
+python manage.py runserver 0.0.0.0:3005
 ```
 
 ### Correr tests
